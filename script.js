@@ -15,7 +15,7 @@ function callApiEndpoint(wordLength, greenLetters, yellowLetters, greyLetters) {
   };
   
   var queryString = new URLSearchParams(data).toString();
-  var url = 'http://dylanbryant.com:5000/api/solvewordle?' + queryString;
+  var url = 'http://api.dylanbryant.com:5000/api/solvewordle?' + queryString;
 
   fetch(url)
     .then(response => response.json())
