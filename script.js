@@ -25,7 +25,8 @@ function callApiEndpoint(wordLength, greenLetters, yellowLetters, greyLetters) {
       dataBox.innerHTML = "Possible Words: " + data.possibleWords + "<br>" + "Elimination Words: " + data.eliminationWords
     })
     .catch(error => {
-      console.log('An error occurred:', error);
+      var dataBox = document.getElementById("data-box");
+      dataBox.innerHTML = error
     });
 }
 
