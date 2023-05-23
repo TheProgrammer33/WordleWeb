@@ -2,31 +2,34 @@
 <html>
 <head>
   <title>Wordle Solver</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
       <h1>Wordle Solver</h1>
-    
-      <label for="word-length">Word Length:</label>
-      <input type="text" id="word-length" /><br><br>
-    
-      <label for="green-letters">Green Letters:</label>
-      <input type="text" id="green-letters" /><br><br>
-    
-      <label for="yellow-letters">Yellow Letters:</label>
-      <input type="text" id="yellow-letters" /><br><br>
-    
-      <label for="grey-letters">Grey Letters:</label>
-      <input type="text" id="grey-letters" /><br><br>
-    
+      
+      <div class="inputs">
+        <label for="word-length">Word Length:</label>
+        <input type="text" id="word-length" /><br><br>
+      
+        <label for="green-letters">Green Letters:</label>
+        <input type="text" id="green-letters" /><br><br>
+      
+        <label for="yellow-letters">Yellow Letters:</label>
+        <input type="text" id="yellow-letters" /><br><br>
+      
+        <label for="grey-letters">Grey Letters:</label>
+        <input type="text" id="grey-letters" /><br><br>
+      </div>
+
       <div class="button-container">
-        <button onclick="processInputs()">Submit</button>
-        <button onclick="clearInputs()">Clear</button>
+        <button class="submit-button" onclick="processInputs()">Submit</button>
+        <button class="clear-button" onclick="clearInputs()">Clear</button>
       </div>
     
-      <h2>Data Display:</h2>
+      <h2>Results:</h2>
       <div id="data-box"></div>
     </div>
     

@@ -9,9 +9,9 @@ function processInputs() {
 function callApiEndpoint(wordLength, greenLetters, yellowLetters, greyLetters) {
   var data = {
     numberOfLetters: wordLength,
-    green: greenLetters,
-    yellow: yellowLetters,
-    grey: greyLetters
+    green: greenLetters.toLowerCase(),
+    yellow: yellowLetters.toLowerCase(),
+    grey: greyLetters.toLowerCase()
   };
   
   var queryString = new URLSearchParams(data).toString();
@@ -31,7 +31,6 @@ function callApiEndpoint(wordLength, greenLetters, yellowLetters, greyLetters) {
 }
 
 function clearInputs() {
-  document.getElementById("word-length").value = "";
   document.getElementById("green-letters").value = "";
   document.getElementById("yellow-letters").value = "";
   document.getElementById("grey-letters").value = "";
