@@ -53,12 +53,25 @@ button:hover {
   background-color: #3e73dd;
 }
 
+.error-message {
+  display: none;
+  color: #c20000
+}
+
 h2 {
   margin-top: 30px;
 }
 
 #data-box {
   text-align: left;
+  min-height: 48px;
+}
+
+textarea {
+  width: 99%;
+  background-color: #222222;
+  border: none;
+  resize: none;
 }
 
 @media only screen and (min-width: 800px) {
