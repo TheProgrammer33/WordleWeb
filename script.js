@@ -36,7 +36,6 @@ function clearInputs() {
   document.getElementById("green-letters").value = "";
   document.getElementById("yellow-letters").value = "";
   document.getElementById("grey-letters").value = "";
-  document.getElementById("notes").value = "";
   
   var dataBox = document.getElementById("data-box");
   dataBox.innerHTML = "";

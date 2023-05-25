@@ -44,13 +44,15 @@ button {
 .submit-button {
   background-color: #4681f4;
 }
+.submit-button:hover {
+  background-color: #3e73dd;
+}
 
 .clear-button {
   background-color: #121212;
 }
-
-button:hover {
-  background-color: #3e73dd;
+.clear-button:hover {
+  background-color: #222222;
 }
 
 .error-message {
@@ -70,6 +72,7 @@ h2 {
 textarea {
   width: 99%;
   background-color: #222222;
+  color: white;
   border: none;
   resize: none;
 }
