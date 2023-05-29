@@ -22,9 +22,8 @@ function callApiEndpoint(wordLength, greenLetters, yellowLetters, greyLetters) {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      // console.log("Response: ", data);
       var dataBox = document.getElementById("data-box");
-      dataBox.innerHTML = "Possible Words: " + data.possibleWords + "<br>" + "Elimination Words: " + data.eliminationWords
+      dataBox.innerHTML = "Possible Words: " + data.possibleWords + "<br><br>" + "Elimination Words: " + data.eliminationWords
     })
     .catch(error => {
       var dataBox = document.getElementById("data-box");
@@ -43,7 +42,7 @@ function clearInputs() {
 
 function validateInputs(wordLength, greenLetters, yellowLetters, greyLetters) {
   // Currently the server only handles two word lengths
-  if (wordLength !== "5" && wordLength !== "7") {
+  if (wordLength !== "5" && wordLength !== "7" && wordLength !== "8") {
     document.getElementById("error-message").innerHTML = "Word Length not Supported";
     document.getElementById("error-message").style.display = "block";
     return false
@@ -74,4 +73,14 @@ function checkLetterAndPosition(input) {
 function checkLettersOnly(input) {
   let pattern = /^([A-Za-z])+$/
   return pattern.test(input)
+}
+
+function openInformationModal() {
+  var modal = document.getElementById("information-modal");
+  modal.style.display = "block";
+}
+
+function closeInformationModal() {
+  var modal = document.getElementById("information-modal");
+  modal.style.display = "none";
 }

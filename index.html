@@ -8,20 +8,47 @@
 </head>
 <body>
     <div class="container">
-      <h1>Wordle Solver</h1>
+      <div class="header">
+        <h1>Wordle Solver</h1>
+        <span onclick="openInformationModal()" class="information-icon">&#9432;</span>
+      </div>
       
       <div class="inputs">
-        <label for="word-length">Word Length:</label>
-        <input type="text" id="word-length" /><br><br>
+        <div>
+          <label for="word-length">Word Length:</label>
+          <input id="word-length"
+            type="number"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false" />
+        </div>
       
-        <label for="green-letters">Green Letters:</label>
-        <input type="text" id="green-letters" /><br><br>
-      
-        <label for="yellow-letters">Yellow Letters:</label>
-        <input type="text" id="yellow-letters" /><br><br>
-      
-        <label for="grey-letters">Grey Letters:</label>
-        <input type="text" id="grey-letters" /><br><br>
+        <div>
+          <label for="green-letters">Green Letters:</label>
+          <input id="green-letters"
+            type="search"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false" />
+        </div>
+        
+        <div>
+          <label for="yellow-letters">Yellow Letters:</label>
+          <input id="yellow-letters"
+            type="email"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false" />
+        </div>
+        
+        <div>
+          <label for="grey-letters">Grey Letters:</label>
+          <input id="grey-letters"
+            type="text"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false" />
+        </div>
       </div>
 
       <p id="error-message" class="error-message"></p>
@@ -37,6 +64,21 @@
       <textarea placeholder="Notes..." rows="10" id="notes"></textarea>
     </div>
     
+  <div id="information-modal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeInformationModal()" class="close">&times;</span>
+      <p>Welcome to the wordle solver.
+        <br><br>
+        Word Length is number of letters that the word you're solving for has.<br>
+        Green Letters and Yellow letters use the syntax <i>t1</i> where t is the letter and 1 is the position in the word for that letter.
+        So if the word starts with a t then you would put t1 in the green letters input.
+        Or if t is not the first letter but it is in the word, then you would put t1 in the yellow input<br>
+        Grey letters can be written like xzbr where all four of those letters are not in the word at all.
+        Notes can be used however you want.
+      </p>
+    </div>
+  </div>
+
     <script src="script.js"></script>
-  </body>
-  </html>
+</body>
+</html>
