@@ -15,11 +15,9 @@ function callApiEndpoint(wordLength, greenLetters, yellowLetters, greyLetters) {
     yellow: yellowLetters.toLowerCase(),
     grey: greyLetters.toLowerCase()
   };
-
-  let apiDomain = document.getElementById("api-domain").value;
   
   var queryString = new URLSearchParams(data).toString();
-  var url = `http://${apiDomain ? apiDomain : 'api.dylanbryant.com'}:5000/api/solvewordle?${queryString}`;
+  var url = `http://api.dylanbryant.com:5000/api/solvewordle?${queryString}`;
 
   fetch(url)
     .then(response => response.json())
@@ -43,8 +41,9 @@ function clearInputs() {
 }
 
 function validateInputs(wordLength, greenLetters, yellowLetters, greyLetters) {
-  // Currently the server only handles two word lengths
-  if (wordLength !== "5" && wordLength !== "7" && wordLength !== "8") {
+  // Currently the server only handles four word lengths
+  possibleWordLengths = ["5", "6", "7", "8"]
+  if (wordLength in possibleWordLengths) {
     document.getElementById("error-message").innerHTML = "Word Length not Supported";
     document.getElementById("error-message").style.display = "block";
     return false
@@ -85,4 +84,12 @@ function openInformationModal() {
 function closeInformationModal() {
   var modal = document.getElementById("information-modal");
   modal.style.display = "none";
+}
+
+function sortTextArea() {
+  document.getElementById("notes").value = document.getElementById("notes").value.split('').sort().join('')
+}
+
+function clearTextArea() {
+  document.getElementById("notes").value = "";
 }

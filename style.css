@@ -71,6 +71,13 @@ button {
   background-color: #222222;
 }
 
+.sort-button {
+  background-color: #5e5e5e;
+}
+.sort-button:hover {
+  background-color: #505050;
+}
+
 .error-message {
   display: none;
   color: #c20000

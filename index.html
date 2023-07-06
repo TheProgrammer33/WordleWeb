@@ -57,20 +57,18 @@
         <button class="submit-button" onclick="processInputs()">Submit</button>
         <button class="clear-button" onclick="clearInputs()">Clear</button>
       </div>
-      
-      <div>
-        <input id="api-domain"
-          class="invisible-input"
-          type="text"
-          autocomplete="off"
-          autocapitalize="off"
-          spellcheck="false" />
-      </div>
     
       <h2>Results:</h2>
       <div id="data-box"></div>
 
-      <textarea placeholder="Notes..." rows="10" id="notes"></textarea>
+      <textarea placeholder="Notes..."
+        rows="10"
+        id="notes"
+        spellcheck="false"></textarea>
+      <div class="button-container">
+        <button class="sort-button" onclick="sortTextArea()">Sort</button>
+        <button class="clear-button" onclick="clearTextArea()">Clear</button>
+      </div>
     </div>
     
   <div id="information-modal" class="modal">
