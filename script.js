@@ -18,6 +18,8 @@ function callApiEndpoint(wordLength, greenLetters, yellowLetters, greyLetters) {
   
   var queryString = new URLSearchParams(data).toString();
   var url = `http://api.dylanbryant.com:5000/api/solvewordle?${queryString}`;
+  
+  document.getElementById("loader").className = 'loader';
 
   fetch(url)
     .then(response => response.json())
@@ -28,6 +30,8 @@ function callApiEndpoint(wordLength, greenLetters, yellowLetters, greyLetters) {
     .catch(error => {
       var dataBox = document.getElementById("data-box");
       dataBox.innerHTML = error
+    }).finally(() => {
+      document.getElementById("loader").className = '';
     });
 }
 
